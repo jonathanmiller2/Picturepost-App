@@ -97,7 +97,7 @@ class _State extends State<AllPostsScreen> {
         leading: BackButton(
           color: Colors.green,
           onPressed: () {
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => MyApp(posts: widget.data),
@@ -112,12 +112,23 @@ class _State extends State<AllPostsScreen> {
         Column(
           children: <Widget>[
             Container(
+              margin: EdgeInsets.only(top: 10),
               child: Align(
                 alignment: Alignment.center,
                 child: ToggleButtons(
                   children: <Widget>[
-                    Text("Distance", style: TextStyle(color: Colors.green),),
-                    Text("Name", style: TextStyle(color: Colors.green),)
+                    Container(
+                        width: 70,
+                        child: Center(
+                            child: Text("Distance", style: TextStyle(color: Colors.green),)
+                        )
+                    ),
+                    Container(
+                        width: 70,
+                        child: Center(
+                            child: Text("Name", style: TextStyle(color: Colors.green),)
+                        )
+                    )
                   ],
                   onPressed: (int index){
                     if(index == 0) {

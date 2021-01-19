@@ -146,7 +146,7 @@ class _State extends State<FavoriteListScreen>  {
               Icons.keyboard_arrow_right
           ),
           onTap: ()  {
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => new PostScreen(post.post.name,
@@ -226,12 +226,23 @@ class _State extends State<FavoriteListScreen>  {
         Column(
           children: <Widget>[
             Container(
+              margin: EdgeInsets.only(top: 10),
               child: Align(
                 alignment: Alignment.center,
                 child: ToggleButtons(
                   children: <Widget>[
-                    Text("Distance", style: TextStyle(color: Colors.green),),
-                    Text("Name", style: TextStyle(color: Colors.green),)
+                    Container(
+                        width: 70,
+                        child: Center(
+                            child: Text("Distance", style: TextStyle(color: Colors.green),)
+                        )
+                    ),
+                    Container(
+                        width: 70,
+                        child: Center(
+                            child: Text("Name", style: TextStyle(color: Colors.green),)
+                        )
+                    )
                   ],
                   onPressed: (int index){
                     if(index == 0) {

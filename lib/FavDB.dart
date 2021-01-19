@@ -19,12 +19,6 @@ class FavDB {
               "lat REAL, lon REAL)"
         );
       },
-      onUpgrade: (db, int oldVersion, int newVersion) {
-        if (oldVersion < newVersion) {
-          db.execute(
-              "ALTER TABLE favorites ADD COLUMN personId INTEGER;");
-        }
-      },
       // Set the version. This executes the onCreate function and provides a
       // path to perform database upgrades and downgrades.
       version: 2,
@@ -59,7 +53,6 @@ class FavDB {
         id: maps[i]['id'],
         lat: maps[i]['lat'].toDouble(),
         lon: maps[i]['lon'].toDouble(),
-        personId: maps[i]['personId'].toInt(),
       );
     });
   }
